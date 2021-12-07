@@ -37,6 +37,8 @@ Paragraph default: 1.6
 
 --- 06 BORDER-RADIUS
 Default: 9px
+Medium: 11px
+
 --- 07 WHITESPACE
 
 -SPACING SYSTEM (px)
@@ -140,7 +142,8 @@ body {
   font-weight: 600;
 
     /*put transition on the original "state"*/
-  transition: background-color 0.3s;
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
 }
 
 .btn--full:link, .btn--full:visited {
@@ -165,8 +168,36 @@ body {
   box-shadow: inset 0 0 0 3px #FFF;
 }
 
+.link:link, 
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor; /*it will take the color of the link*/
+  padding-bottom: 2px;
+  transition: all 0.3s
+}
+
+.link:hover, 
+.link:active {
+  color: #cf711f;
+  /*the border bottom will automatically change because we used the currenColor keyword but we do not want the border bottom here so we will make it transparent*/
+  border-bottom: 1px solid transparent;
+}
+
+/*HERLPER/SETTING CLASES*/
 .margin-right-sm {
   margin-right: 1.6rem !important; /*the important will add priority to apply in the css*/
 }
 
+.margin-bottom-md {
+  margin-bottom: 4.8rem;
+}
 
+.center-text {
+  text-align: center;
+}
+
+strong {
+  font-weight: 500;
+}
